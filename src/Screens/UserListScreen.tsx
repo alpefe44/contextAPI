@@ -13,7 +13,7 @@ const UserListScreen = (props: Props) => {
                 users && users.map((user) => {
                     return (
                         <View>
-                            <Text>{user}</Text>
+                            <Text>{user.name} {user.soyad}</Text>
                         </View>
                     )
                 })

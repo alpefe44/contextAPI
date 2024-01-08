@@ -7,9 +7,9 @@ const UserContext = createContext({} as UserContextProps)
 
 const UserProvider = ({ children }: any) => {
 
-    const [users, setUsers] = useState<string[]>([]);
+    const [users, setUsers] = useState<User[]>([]);
 
-    const addUser = (newUser: string) => {
+    const addUser = (newUser: User) => {
         setUsers([...users, newUser]);
     };
 
@@ -22,9 +22,15 @@ const UserProvider = ({ children }: any) => {
 
 
 export interface UserContextProps {
-    users: string[],
-    setUsers: React.Dispatch<React.SetStateAction<string[]>>,
-    addUser: (newUser: string) => void
+    users: User[],
+    setUsers: React.Dispatch<React.SetStateAction<User[]>>,
+    addUser: (newUser: User) => void
+}
+
+
+export interface User {
+    name : string,
+    soyad : string
 }
 
 export { UserProvider, UserContext };
